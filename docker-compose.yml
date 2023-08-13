@@ -22,7 +22,7 @@ services:
   database:
     image: postgres:12.3
     env_file:
-      - config/docker.env
+      - .env
     volumes:
       - database_data:/var/lib/postgresql/data
     networks:
