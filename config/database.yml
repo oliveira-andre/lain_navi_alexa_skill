@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV['db_host'] || '127.0.0.1' %>
+  port: <%= ENV['db_port'] || 5432 %>
+  username: <%= ENV['db_user'] || 'postgres' %>
+  password: <%= ENV['db_pass'] || 'postgres' %>
+
+development:
+  <<: *default
+  database: lain_navi_development
+
+test:
+  <<: *default
+  database: lain_navi_test
+
+production:
+  <<: *default
+  database: lain_navi_production
