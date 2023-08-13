@@ -19,7 +19,7 @@ ENV RAILS_SERVE_STATIC_FILES true
 ENV RAILS_LOG_TO_STDOUT true
 
 COPY Gemfile* $RAILS_ROOT
-RUN gem install bundler:2.3.25
+RUN gem install bundler:2.3.26
 RUN gem update --system
 RUN bundle config --global frozen 1 && bundle install
 
